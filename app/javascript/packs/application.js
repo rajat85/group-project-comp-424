@@ -8,6 +8,8 @@ import 'regenerator-runtime/runtime'
 import 'bootstrap';
 import '../stylesheets/application.scss';
 
+import '../stylesheets/custom.scss';
+
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
