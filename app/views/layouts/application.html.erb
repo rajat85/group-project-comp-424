@@ -1,45 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GroupProjectComp424</title>
+    <title><%= full_title(yield(:title)) %></title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <%= link_to root_url, class: 'nav-link' do %>
-                Home <%= content_tag(:span, '(current)', class: "sr-only") %>
-              <% end %>
-            </li>
-          </ul>
-          <% if user_signed_in? %>
-            <%= link_to('Sign out', destroy_user_session_path) %>
-          <% end %>
-        </div>
-      </div>
-    </nav>
-
+    <%= render 'layouts/header' %>
     <main role="main" class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
-
+    <%= render 'layouts/footer' %>
   </body>
 </html>
