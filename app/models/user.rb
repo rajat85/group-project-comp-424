@@ -3,8 +3,17 @@ class User < ApplicationRecord
   # :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
-         :lockable, :timeoutable, :trackable
+         :lockable, :timeoutable, :trackable,  password_length: 8..70
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validate :password_complexity
+  validates :first_name, :last_name, :date_of_birth, presence: true
+
+  protected
+
+  def password_complexity
+    # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,70}$/
+
+    errors.add :password, 'Complexity requirement not met. Length should be 8-70 characters and include: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+  end
 end
