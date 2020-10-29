@@ -834,6 +834,11 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@client-side-validations/client-side-validations@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@client-side-validations/client-side-validations/-/client-side-validations-0.1.4.tgz#fdd6c3f22ba1f08f64e32d72918cfc77e0f778e0"
+  integrity sha512-rloe9JV9FU3eFWH3JvDkJ3JIikTQDIvcG0ZEgkJc6Z1UKHMG/f4Pg0bN6jeFmsYp/9v6usN0RkPPNCOzfaG90w==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"

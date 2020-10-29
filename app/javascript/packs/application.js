@@ -10,10 +10,13 @@ import '../stylesheets/application.scss';
 
 import '../stylesheets/custom.scss';
 
+import 'jquery';
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+import '@client-side-validations/client-side-validations'
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
