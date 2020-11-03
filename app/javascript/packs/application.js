@@ -5,19 +5,24 @@
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
 
-import 'bootstrap';
-import '../stylesheets/application.scss';
-
-import '../stylesheets/custom.scss';
-
-import 'jquery';
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
-require("channels")
+require("channels");
+var jQuery = require("jquery")
 
-import '@client-side-validations/client-side-validations'
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
 
+import 'bootstrap';
+import '../stylesheets/application';
+
+import 'password-strength-meter';
+// var passwordStrengthMeter = password-strength-meter;
+// global.passwordStrengthMeter = passwordStrengthMeter;
+// window.passwordStrengthMeter = passwordStrengthMeter;
+
+import '@client-side-validations/client-side-validations';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

@@ -12,7 +12,8 @@
         <%= f.text_field :security_question_answer %>
         <%= f.password_field :password,
               autocomplete: "new-password",
-              help: t('devise.shared.minimum_password_length', count: @minimum_password_length) %>
+              help: t('devise.shared.minimum_password_length', count: @minimum_password_length),
+              class: 'password-validation' %>
         <%= f.password_field :password_confirmation,
               autocomplete: "new-password",
               label_class: "required" %>
@@ -30,3 +31,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'password_validation', 'data-turbolinks-track': 'reload' %>
