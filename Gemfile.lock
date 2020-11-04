@@ -58,11 +58,11 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (10.0.1.0)
+    autoprefixer-rails (10.0.1.2)
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.4.9)
+    bootsnap (1.5.0)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -82,9 +82,9 @@ GEM
       xpath (~> 3.2)
     character_set (1.4.0)
     childprocess (3.0.0)
-    client_side_validations (17.1.0)
+    client_side_validations (17.2.0)
       js_regex (~> 3.1)
-      rails (>= 5.0.0.1, < 6.1)
+      rails (>= 5.0.0.1, < 6.2)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     devise (4.7.3)
@@ -99,9 +99,16 @@ GEM
       rails (>= 5.0.0)
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
+    devise-security (0.14.3)
+      devise (>= 4.3.0, < 5.0)
+      rails (>= 4.2.0, < 7.0)
     devise_invitable (2.0.2)
       actionmailer (>= 5.0)
       devise (>= 4.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -113,9 +120,9 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
-    js_regex (3.5.0)
+    js_regex (3.5.1)
       character_set (~> 1.4)
-      regexp_parser (~> 1.6)
+      regexp_parser (~> 1.8, >= 1.8.2)
       regexp_property_values (~> 1.0)
     json (2.3.1)
     launchy (2.5.0)
@@ -243,7 +250,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.0)
+    zeitwerk (2.4.1)
 
 PLATFORMS
   ruby
@@ -258,7 +265,9 @@ DEPENDENCIES
   devise
   devise-bootstrap-form
   devise-i18n
+  devise-security
   devise_invitable
+  dotenv-rails
   font-awesome-sass
   jbuilder (~> 2.7)
   letter_opener

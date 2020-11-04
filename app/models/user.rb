@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable,
          :lockable, :timeoutable, :trackable,  password_length: 8..70
+  devise :password_expirable, :password_archivable, :session_limitable, :expirable
 
   validate :password_complexity
   validates :first_name, :last_name, :date_of_birth, presence: true
