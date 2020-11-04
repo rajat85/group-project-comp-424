@@ -1,0 +1,1 @@
+Dotenv.require_keys("RECAPTCHA_SITE_KEY", "RECAPTCHA_SECRET_KEY")
