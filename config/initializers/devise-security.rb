@@ -25,16 +25,16 @@ Devise.setup do |config|
   # config.email_validation = true
 
   # captcha integration for recover form
-  config.captcha_for_recover = true
+  # config.captcha_for_recover = true
 
   # captcha integration for sign up form
   config.captcha_for_sign_up = true
 
   # captcha integration for sign in form
-  config.captcha_for_sign_in = true
+  # config.captcha_for_sign_in = true
 
   # captcha integration for unlock form
-  config.captcha_for_unlock = true
+  # config.captcha_for_unlock = true
 
   # captcha integration for confirmation form
   # config.captcha_for_confirmation = true

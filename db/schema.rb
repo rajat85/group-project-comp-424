@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_16_165745) do
+ActiveRecord::Schema.define(version: 2020_11_06_042246) do
+
+  create_table "old_passwords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "encrypted_password", null: false
+    t.string "password_archivable_type", null: false
+    t.integer "password_archivable_id", null: false
+    t.string "password_salt"
+    t.datetime "created_at"
+    t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
+  end
+
+  create_table "security_questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "locale", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "the_resources", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "password_changed_at"
+    t.string "unique_session_id"
+    t.datetime "last_activity_at"
+    t.datetime "expired_at"
+    t.integer "security_question_id"
+    t.string "security_question_answer"
+    t.index ["expired_at"], name: "index_the_resources_on_expired_at"
+    t.index ["last_activity_at"], name: "index_the_resources_on_last_activity_at"
+    t.index ["password_changed_at"], name: "index_the_resources_on_password_changed_at"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name", default: "", null: false
@@ -35,7 +63,14 @@ ActiveRecord::Schema.define(version: 2020_10_16_165745) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "password_changed_at"
+    t.string "unique_session_id", limit: 20
+    t.datetime "last_activity_at"
+    t.datetime "expired_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["expired_at"], name: "index_users_on_expired_at"
+    t.index ["last_activity_at"], name: "index_users_on_last_activity_at"
+    t.index ["password_changed_at"], name: "index_users_on_password_changed_at"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
