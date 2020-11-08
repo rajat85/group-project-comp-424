@@ -79,7 +79,7 @@ var PREPROC_RULE_PATH /etc/snort/preproc_rules
 var WHITE_LIST_PATH /etc/snort/rules
 var BLACK_LIST_PATH /etc/snort/rules
 
-cd /home/ubuntu/424project/group-project-comp-424/scripts
+cd $HOME_DIR/group-project-comp-424/scripts
 sudo cp snort.conf /etc/snort
 sudo cp local.rules /etc/snort/rules
 sudo cp snort.service /lib/systemd/system
@@ -95,12 +95,6 @@ include $RULE_PATH/community.rules
 
 sudo snort -T -c /etc/snort/snort.conf
 
-#Copy config files
-#cd /home/ubuntu/424project/group-project-comp-424/scripts
-#sudo cp snort.conf /etc/snort
-#sudo cp local.rules /etc/snort/rules
-#sudo cp snort.service /lib/systemd/system
-#sudo cp apache2.conf /etc/apache2
 
 #Fix mods for apache
 a2dismod mpm_event
@@ -111,7 +105,3 @@ sudo systemctl restart apache2
 sudo systemctl daemon-reload
 sudo systemctl start snort
 
-#Copy website files
-#cp -r /Comp424-FinalProject/scripts/html/. /var/www/html
-#cd /var/www/html
-#rm index.html
