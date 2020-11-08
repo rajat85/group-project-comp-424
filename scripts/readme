@@ -6,5 +6,5 @@ git clone https://github.com/rajat85/group-project-comp-424.git
 2. Go to directory 
 group-project-comp-424/scripts/
 
-3. Execute installation and implementation script one by one.
+3. Execute ./installation.sh and ./implementation.sh script one by one.
 
