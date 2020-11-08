@@ -30,9 +30,9 @@ sudo groupadd snort
 sudo useradd snort -r -s /sbin/nologin -c SNORT_IDS -g snort
 
 #Create directories
-mkdir -p /etc/snort/rules
-mkdir /var/log/snort
-mkdir /usr/local/lib/snort_dynamicrules
+sudo mkdir -p /etc/snort/rules
+sudo mkdir /var/log/snort
+sudo mkdir /usr/local/lib/snort_dynamicrules
 
 #Fix file/dir permissions
 sudo chmod -R 5775 /etc/snort
