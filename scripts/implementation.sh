@@ -60,7 +60,7 @@ sudo cp $HOME_DIR/community-rules/* /etc/snort/rules
 sudo sed -i 's/include \$RULE\_PATH/#include \$RULE\_PATH/' /etc/snort/snort.conf
 
 # Obtaining registered user rules
-wget https://www.snort.org/rules/snortrules-snapshot-29160.tar.gz?oinkcode=oinkcode -O $HOME_DIR/registered.tar.gz
+wget https://www.snort.org/rules/snortrules-snapshot-29160.tar.gz?oinkcode=oinkcode -O ~/registered.tar.gz
 sudo tar -xvf $HOME_DIR/registered.tar.gz -C /etc/snort
 
 # Configuring the network and rule sets
