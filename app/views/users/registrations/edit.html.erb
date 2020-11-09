@@ -3,7 +3,11 @@
     <div class="devise-bootstrap-form-col">
       <h2 class="text-center">t('.title', resource: resource_name.to_s.humanize)</h2>
       <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%#= render "devise/shared/error_messages", resource: resource %>
+
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+        <%= f.text_field :last_name, autocomplete: "last_name" %>
+        <%= f.date_field :date_of_birth %>
 
         <%= f.email_field :email %>
 
@@ -17,6 +21,8 @@
                              autocomplete: "off",
                              class: "required",
                              help: t('.we_need_your_current_password_to_confirm_your_changes') %>
+        <%= f.select :security_question_id, SecurityQuestion.where(locale: I18n.locale).map{|s| [s.name, s.id]} %>
+        <%= f.text_field :security_question_answer %>
 
         <%= f.form_group do %>
           <%= f.submit t('.update'), class: "btn btn-lg btn-block btn-primary" %>

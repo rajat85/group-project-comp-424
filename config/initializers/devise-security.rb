@@ -41,4 +41,20 @@ Devise.setup do |config|
 
   # Time period for account expiry from last_activity_at
   # config.expire_after = 90.days
+
+  # security_question integration for recover form
+  # this automatically enables captchas (captcha_for_recover, as fallback)
+  config.security_question_for_recover = false
+
+  # security_question integration for unlock form
+  # this automatically enables captchas (captcha_for_unlock, as fallback)
+  config.security_question_for_unlock = false
+
+  # security_question integration for confirmation form
+  # this automatically enables captchas (captcha_for_confirmation, as fallback)
+  config.security_question_for_confirmation = true
+
+  # ==> Configuration for :expirable
+  # Time period for account expiry from last_activity_at
+  config.expire_after = 90.days
 end
