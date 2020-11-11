@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_081608) do
+ActiveRecord::Schema.define(version: 2020_11_10_073319) do
 
   create_table "old_passwords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "encrypted_password", null: false
@@ -55,6 +55,12 @@ ActiveRecord::Schema.define(version: 2020_11_09_081608) do
     t.datetime "expired_at"
     t.integer "security_question_id"
     t.string "security_question_answer"
+    t.string "encrypted_otp_secret"
+    t.string "encrypted_otp_secret_iv"
+    t.string "encrypted_otp_secret_salt"
+    t.integer "consumed_timestep"
+    t.boolean "otp_required_for_login"
+    t.text "otp_backup_codes"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["expired_at"], name: "index_users_on_expired_at"
     t.index ["last_activity_at"], name: "index_users_on_last_activity_at"
