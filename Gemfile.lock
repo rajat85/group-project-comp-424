@@ -58,11 +58,13 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (10.0.1.2)
+    attr_encrypted (3.1.0)
+      encryptor (~> 3.0.0)
+    autoprefixer-rails (10.0.1.3)
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.5.0)
+    bootsnap (1.5.1)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
@@ -82,6 +84,7 @@ GEM
       xpath (~> 3.2)
     character_set (1.4.0)
     childprocess (3.0.0)
+    chunky_png (1.3.14)
     client_side_validations (17.2.0)
       js_regex (~> 3.1)
       rails (>= 5.0.0.1, < 6.2)
@@ -102,6 +105,12 @@ GEM
     devise-security (0.14.3)
       devise (>= 4.3.0, < 5.0)
       rails (>= 4.2.0, < 7.0)
+    devise-two-factor (3.1.0)
+      activesupport (< 6.1)
+      attr_encrypted (>= 1.3, < 4, != 2)
+      devise (~> 4.0)
+      railties (< 6.1)
+      rotp (~> 2.0)
     devise_invitable (2.0.2)
       actionmailer (>= 5.0)
       devise (>= 4.6)
@@ -109,6 +118,7 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
+    encryptor (3.0.0)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.13.1)
@@ -129,7 +139,7 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
-    listen (3.2.1)
+    listen (3.3.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.7.0)
@@ -199,6 +209,11 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rotp (2.1.2)
+    rqrcode (1.1.2)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 0.1)
+    rqrcode_core (0.1.2)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -214,6 +229,9 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
+    simple_form (5.0.3)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -232,11 +250,11 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.7)
+    tzinfo (1.2.8)
       thread_safe (~> 0.1)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (4.0.4)
+    web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -271,6 +289,7 @@ DEPENDENCIES
   devise-bootstrap-form
   devise-i18n
   devise-security
+  devise-two-factor
   devise_invitable
   dotenv-rails
   font-awesome-sass
@@ -282,8 +301,10 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   recaptcha
+  rqrcode
   sass-rails (>= 6)
   selenium-webdriver
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
