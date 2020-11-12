@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-      sessions: 'users/sessions'
+      sessions: 'users/sessions',
+      # passwords: 'users/passwords'
   }
   resource :two_factor_settings, except: [:index, :show]
   get "home/download_pdf"

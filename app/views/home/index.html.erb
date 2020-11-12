@@ -1,6 +1,8 @@
 <div class="center jumbotron">
   <h1>Welcome to the Application</h1>
-  <div>Your last login was <%= current_user.current_sign_in_at %></div>
+  <div>Your last login was: <%= ActiveSupport::TimeZone["Central Time (US & Canada)"].parse(current_user.last_sign_in_at.to_s) %></div>
+  <div>Total number of sign in count: <%= current_user.sign_in_count %></div>
+
   <h2>
     Download the file using the download link
     <%= link_to "Download PDF", home_download_pdf_url, class: "btn btn-lg btn-primary" %>

@@ -8,7 +8,7 @@ Devise.setup do |config|
   # config.expire_password_after = false
 
   # Need 1 char of A-Z, a-z and 0-9
-  config.password_complexity = { digit: 1, lower: 1, symbol: 1, upper: 1 }
+  # config.password_complexity = { digit: 1, lower: 1, symbol: 1, upper: 1 }
 
   # How many passwords to keep in archive
   # config.password_archiving_count = 5
@@ -25,36 +25,33 @@ Devise.setup do |config|
   # config.email_validation = true
 
   # captcha integration for recover form
-  # config.captcha_for_recover = true
+  config.captcha_for_recover = false
 
   # captcha integration for sign up form
   config.captcha_for_sign_up = true
 
   # captcha integration for sign in form
-  # config.captcha_for_sign_in = true
+  config.captcha_for_sign_in = true
 
   # captcha integration for unlock form
-  # config.captcha_for_unlock = true
+  config.captcha_for_unlock = false
 
   # captcha integration for confirmation form
   # config.captcha_for_confirmation = true
 
-  # Time period for account expiry from last_activity_at
-  # config.expire_after = 90.days
 
   # security_question integration for recover form
   # this automatically enables captchas (captcha_for_recover, as fallback)
-  config.security_question_for_recover = false
+  config.security_question_for_recover = true
 
   # security_question integration for unlock form
   # this automatically enables captchas (captcha_for_unlock, as fallback)
-  config.security_question_for_unlock = false
+  config.security_question_for_unlock = true
 
   # security_question integration for confirmation form
   # this automatically enables captchas (captcha_for_confirmation, as fallback)
-  config.security_question_for_confirmation = true
+  # config.security_question_for_confirmation = false
 
-  # ==> Configuration for :expirable
   # Time period for account expiry from last_activity_at
-  config.expire_after = 90.days
+  # config.expire_after = 90.days
 end
