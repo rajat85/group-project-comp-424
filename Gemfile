@@ -65,7 +65,7 @@ gem 'devise_invitable'
 gem 'devise-bootstrap-form'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'devise-security'
+gem 'devise-security', git: 'https://github.com/devise-security/devise-security'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'client_side_validations'
 gem 'devise-two-factor'

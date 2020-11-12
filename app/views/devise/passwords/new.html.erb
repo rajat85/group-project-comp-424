@@ -7,6 +7,12 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <br>
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.select :security_question_id, ('<option value="">Please Select</option>' + options_from_collection_for_select(SecurityQuestion.where(locale: I18n.locale), :id, :name)).html_safe, name: 'security_question_answer' %>
+        <%= f.text_field :security_question_answer, { name: "security_question_answer" } %>
+        <div class="form-group">
+          <%= flash[:recaptcha_error] %>
+          <%= recaptcha_tags %>
+        </div>
         <%= f.form_group do %>
           <%= f.submit t('.send_me_reset_password_instructions'), class: 'btn btn-primary btn-block btn-lg' %>
         <% end %>

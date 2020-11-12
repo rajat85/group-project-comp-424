@@ -53,6 +53,8 @@ class User < ApplicationRecord
   validate :password_complexity
   validates :first_name, :last_name, :date_of_birth, presence: true
 
+  belongs_to :security_question
+  
   # Ensure that backup codes can be serialized
   serialize :otp_backup_codes, JSON
 

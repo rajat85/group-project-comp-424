@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/devise-security/devise-security
+  revision: ce11948dbd75ceb83fe645ee24fff4d4d7566cdd
+  specs:
+    devise-security (0.14.3)
+      devise (>= 4.3.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,7 +70,7 @@ GEM
       rake (>= 10.4, < 14.0)
     attr_encrypted (3.1.0)
       encryptor (~> 3.0.0)
-    autoprefixer-rails (10.0.1.3)
+    autoprefixer-rails (10.0.2.0)
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
@@ -105,9 +112,6 @@ GEM
       rails (>= 5.0.0)
     devise-i18n (1.9.2)
       devise (>= 4.7.1)
-    devise-security (0.14.3)
-      devise (>= 4.3.0, < 5.0)
-      rails (>= 4.2.0, < 7.0)
     devise-two-factor (3.1.0)
       activesupport (< 6.1)
       attr_encrypted (>= 1.3, < 4, != 2)
@@ -292,7 +296,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-form
   devise-i18n
-  devise-security
+  devise-security!
   devise-two-factor
   devise_invitable
   dotenv-rails

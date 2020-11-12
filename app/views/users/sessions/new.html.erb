@@ -6,6 +6,11 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Password' %>
 
+      <div class="form-group">
+        <%= flash[:recaptcha_error] %>
+        <%= recaptcha_tags %>
+      </div>
+
       <% if devise_mapping.rememberable? -%>
         <%= f.form_group do %>
         <%= f.check_box :remember_me %>
