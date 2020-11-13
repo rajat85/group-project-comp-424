@@ -13,6 +13,7 @@ sudo apt install apache2
 sudo apt -y install mysql-server
 sudo apt install -y openssh-server
 sudo apt install -y gcc libpcre3-dev zlib1g-dev libluajit-5.1-dev libpcap-dev openssl libssl-dev libnghttp2-dev libdumbnet-dev bison flex libdnet
+sudo apt install yarn
 
 # install mysql client
 sudo apt-get install libmysqlclient-dev
