@@ -1,14 +1,14 @@
 .devise-bootstrap-form {
-  @extend .container;
+  @extend .container !optional;
 }
 
 .devise-bootstrap-form-col {
-  @extend .col-12;
-  @extend .col-sm-8;
-  @extend .col-lg-6;
+  @extend .col-12 !optional;
+  @extend .col-sm-8 !optional;
+  @extend .col-lg-6 !optional;
 }
 
 .devise-bootstrap-form-row {
-  @extend .row;
-  @extend .justify-content-around;
+  @extend .row !optional;
+  @extend .justify-content-around !optional;
 }
