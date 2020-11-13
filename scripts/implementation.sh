@@ -99,8 +99,8 @@ sudo snort -T -c /etc/snort/snort.conf
 
 
 #Fix mods for apache
-a2dismod mpm_event
-a2enmod mpm_prefork
+sudo a2dismod mpm_event
+sudo a2enmod mpm_prefork
 
 #Start/reload necessary services
 sudo systemctl restart apache2
