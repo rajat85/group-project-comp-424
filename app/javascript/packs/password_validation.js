@@ -1,7 +1,5 @@
-console.log("Password validation loaded");
-console.log(jQuery.fn.jquery);
-console.log($.fn.jquery);
 import jQuery from 'jquery';
+import 'password-strength-meter';
 
 jQuery(function($) {
   const el = $('.password-validation');

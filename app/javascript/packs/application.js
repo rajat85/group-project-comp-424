@@ -17,7 +17,6 @@ window.$ = window.jQuery = jQuery;
 import 'bootstrap';
 import '../stylesheets/application';
 
-import 'password-strength-meter';
 // var passwordStrengthMeter = password-strength-meter;
 // global.passwordStrengthMeter = passwordStrengthMeter;
 // window.passwordStrengthMeter = passwordStrengthMeter;
