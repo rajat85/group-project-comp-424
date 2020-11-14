@@ -31,10 +31,13 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  config.to_prepare { Devise::SessionsController.force_ssl }
+  config.to_prepare { Devise::RegistrationsController.force_ssl }
+  config.to_prepare { Devise::PasswordsController.force_ssl }
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  host = 'localhost' #replace with your own url
-  config.action_mailer.default_url_options = { host: host, port: 3000 }
+  config.action_mailer.default_url_options = { protocol: 'https', host: ENV["HOST_NAME"], port: ["localhost", "127.0.0.1"].include?(ENV["HOST_NAME"]) ? 3000 : 80 }
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",

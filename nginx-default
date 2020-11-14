@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    listen [::]:80;
+    server_name ec2-18-218-71-170.us-east-2.compute.amazonaws.com;
+    return 302 https://$server_name$request_uri;
+}
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    include snippets/self-signed.conf;
+    include snippets/ssl-params.conf;
+    server_name ec2-18-218-71-170.us-east-2.compute.amazonaws.com;
+    root /home/ubuntu/group-project-comp-424/public;
+    passenger_enabled on;
+    passenger_ruby /home/ubuntu/.rvm/gems/ruby-2.7.1/wrappers/ruby;
+    passenger_sticky_sessions on;
+    rails_env development;
+}
