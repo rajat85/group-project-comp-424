@@ -85,7 +85,7 @@ cd $HOME_DIR/group-project-comp-424/scripts
 sudo cp snort.conf /etc/snort
 sudo cp local.rules /etc/snort/rules
 sudo cp snort.service /lib/systemd/system
-sudo cp apache2.conf /etc/apache2
+#sudo cp apache2.conf /etc/apache2
 
 
 # unified2
@@ -103,7 +103,7 @@ sudo a2dismod mpm_event
 sudo a2enmod mpm_prefork
 
 #Start/reload necessary services
-sudo systemctl restart apache2
+sudo systemctl restart nginx
 sudo systemctl daemon-reload
 sudo systemctl start snort
 
