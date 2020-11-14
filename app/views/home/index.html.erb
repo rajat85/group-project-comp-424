@@ -1,7 +1,7 @@
 <div class="center jumbotron">
   <h1>Welcome to the Application</h1>
-  <div>Your last login was: <%= current_user.last_sign_in_at.to_s %></div>
-  <div>Total number of sign in count: <%= I18n.l(current_user.sign_in_count, format: :long, locale: :'en-US') %></div>
+  <div>Your last login was: <%= localize(current_user.last_sign_in_at, format: :long, default: '-') %></div>
+  <div>Total number of sign in count: <%= pluralize(current_user.sign_in_count, 'time') %></div>
 
   <h2>
     Download the file using the download link
