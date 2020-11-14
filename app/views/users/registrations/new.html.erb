@@ -9,7 +9,7 @@
         <%= f.date_field :date_of_birth %>
         <%= f.email_field :email, autocomplete: "email" %>
         <%= f.select :security_question_id, ('<option value="">Please Select</option>' + options_from_collection_for_select(SecurityQuestion.where(locale: I18n.locale), :id, :name)).html_safe, name: 'security_question_answer' %>
-        <%= f.text_field :security_question_answer %>
+        <%= f.password_field :security_question_answer %>
         <%= f.password_field :password,
               autocomplete: "new-password",
               help: t('devise.shared.minimum_password_length', count: @minimum_password_length),
