@@ -86,6 +86,7 @@ en:
         updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
         update: "Update"
         cancel_my_account: "Cancel My Account"
+        are_you_sure: "Are you sure you want to delete your account"
     sessions:
       new:
         sign_in: "Sign in"
